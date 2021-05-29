@@ -6,4 +6,21 @@
         <UseWPF>true</UseWPF>
     </PropertyGroup>
 
+    <ItemGroup>
+      <None Remove="UserControls\bike.png" />
+      <None Remove="UserControls\car.png" />
+      <None Remove="UserControls\truck.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Views\" />
+      <Folder Include="ViewModels\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Resource Include="UserControls\bike.png" />
+      <Resource Include="UserControls\car.png" />
+      <Resource Include="UserControls\truck.png" />
+    </ItemGroup>
+
 </Project>
