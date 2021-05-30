@@ -5,17 +5,31 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPF_MVVM.Views" xmlns:viewmodels="clr-namespace:WPF_MVVM.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:VehiclesViewModel}"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MinHeight="200" MinWidth="300">
     <DockPanel>
-        <ToolBarTray DockPanel.Dock="Top">
+        <ToolBarTray DockPanel.Dock="Top" IsLocked="True">
             <ToolBar>
                 <Button Content="Add" Command="{Binding Path=AddCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=DataContext}"/>
                 <Button Content="Edit" Command="{Binding Path=EditCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=DataContext}"/>
                 <Button Content="Delete" Command="{Binding Path=DeleteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=DataContext}"/>
-                <Button Content="New window" Command="{Binding Path=NewWindowCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=DataContext}"/>
+                <Separator/>
+                <ComboBox Width="120" SelectedIndex="{Binding FilterOption}" Text="Filter">
+                    <ComboBoxItem Content="&gt;=">
+                    </ComboBoxItem>
+                    <ComboBoxItem Content="&lt;">
+                    </ComboBoxItem>
+                    <ComboBoxItem IsSelected="True" Content="No filter"></ComboBoxItem>
+                </ComboBox>
                 <TextBox Height="22" Margin="0" TextWrapping="Wrap" Text="{Binding FilterNumber, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+                <Separator/>
+                <Button Content="New window" Command="{Binding Path=NewWindowCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=DataContext}"/>
             </ToolBar>
         </ToolBarTray>
+        <StatusBar  DockPanel.Dock="Bottom" Height="20">
+            <StatusBarItem>
+                <TextBlock Name="itemsCounter" Text="{Binding ViewItemsNumber}" />
+            </StatusBarItem>
+        </StatusBar>
         <ListView x:Name="StudentsListView" ItemsSource="{Binding Vehicles}" SelectedItem="{Binding SelectedVehicle, Mode=TwoWay}" Margin="0,0,0,0.4" Grid.Row="1" Grid.ColumnSpan="2">
             <ListView.View>
                 <GridView>
@@ -26,5 +40,14 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <DockPanel.ContextMenu>
+            <ContextMenu Name="cm" StaysOpen="true">
+                <MenuItem Header="Add" Command="{Binding Path=AddCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=DataContext}"/>
+                <MenuItem Header="Edit" Command="{Binding Path=EditCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=DataContext}"/>
+                <MenuItem Header="Delete" Command="{Binding Path=DeleteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=DataContext}"/>
+                <Separator/>
+                <MenuItem Header="New window" Command="{Binding Path=NewWindowCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=DataContext}"/>
+            </ContextMenu>
+        </DockPanel.ContextMenu>
     </DockPanel>
 </UserControl>

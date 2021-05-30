@@ -4,10 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPF_MVVM.UserControls"
-             mc:Ignorable="d" Height="114" Width="114">
-    <Grid Background="White">
-        <Button x:Name="ChangeTypeButton" Click="ChangeType_ButtonClick" Height="114" VerticalAlignment="Top" HorizontalAlignment="Left" Width="114">
-            <Image x:Name="VehicleTypeImg" Height="100" VerticalAlignment="Stretch" Source="/UserControls/car.png" HorizontalAlignment="Stretch" Width="98"/>
-        </Button>
-    </Grid>
+             mc:Ignorable="d" Height="100" Width="100">
+    <Viewbox Stretch="Uniform">
+        <Grid Background="White">
+            <Button x:Name="ChangeTypeButton" Click="ChangeType_ButtonClick" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <Image x:Name="VehicleTypeImg" VerticalAlignment="Stretch" Source="/UserControls/car.png" HorizontalAlignment="Stretch"/>
+            </Button>
+        </Grid>
+    </Viewbox>
 </UserControl>

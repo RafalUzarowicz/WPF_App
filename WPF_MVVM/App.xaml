@@ -12,8 +12,6 @@
             <DataTemplate DataType="{x:Type vm:VehicleViewModel}">
                 <vs:VehicleView/>
             </DataTemplate>
-            <!-- Dummy Style, anything you won't use goes -->
-            <Style TargetType="{x:Type Rectangle}" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPF_MVVM.Views" xmlns:local1="clr-namespace:WPF_MVVM.UserControls" xmlns:viewmodels="clr-namespace:WPF_MVVM.ViewModels" xmlns:models="clr-namespace:WPF_MVVM.Models" d:DataContext="{d:DesignInstance Type=viewmodels:VehicleViewModel}"
-             mc:Ignorable="d" Height="276" Width="339">
+             mc:Ignorable="d" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
     <Grid>
         <Label Content="Brand" Margin="10,10,0,0" HorizontalAlignment="Left" Width="41" Height="26" VerticalAlignment="Top"/>
         <Label Content="Max speed" Margin="10,41,0,0" HorizontalAlignment="Left" Width="67" Height="26" VerticalAlignment="Top"/>
@@ -12,7 +12,7 @@
         <Label Content="Type" Margin="10,140,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="36"/>
         <TextBox Height="23" Margin="106,13,27,0" TextWrapping="Wrap" Text="{Binding Brand}" VerticalAlignment="Top"/>
         <TextBox Margin="106,44,27,0" TextWrapping="Wrap" Text="{Binding MaxSpeed}" Height="23" VerticalAlignment="Top"/>
-        <local1:VehicleTypePicker Margin="106,103,0,0" Height="100" VehicleType="{Binding VehicleType, Mode=TwoWay, BindsDirectlyToSource=True}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="114"/>
+        <local1:VehicleTypePicker Margin="106,103,0,0" VehicleType="{Binding VehicleType, Mode=TwoWay, BindsDirectlyToSource=True}" Height="100" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100"/>
         <Button Content="Ok" Command="{Binding Path=OkCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=DataContext}" Margin="0,0,92,13" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75"/>
         <Button Content="Cancel" Command="{Binding Path=CancelCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=DataContext}" Margin="0,0,12,13" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75"/>
         <DatePicker SelectedDate="{Binding ProductionDate, Mode=TwoWay}" Margin="106,74,27,0" VerticalAlignment="Top"/>

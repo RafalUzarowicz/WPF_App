@@ -12,7 +12,8 @@ namespace WPF_MVVM.MVVMs
         public void Show(IViewModel viewModel)
         {
             Window w = new Window();
-            w.SizeToContent = SizeToContent.WidthAndHeight;
+            w.Width = 800;
+            w.Height = 600;
             w.Content = viewModel;
             viewModel.Close = w.Close;
             w.Show();
@@ -20,8 +21,9 @@ namespace WPF_MVVM.MVVMs
         public void ShowDialog(IViewModel viewModel)
         {
             Window w = new Window();
-            w.SizeToContent = SizeToContent.WidthAndHeight;
             w.Content = viewModel;
+            w.Width = 250;
+            w.Height = 300;
             viewModel.Close = w.Close;
             w.ShowDialog();
         }
