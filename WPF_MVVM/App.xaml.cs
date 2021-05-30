@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using WPF_MVVM.Models;
+using WPF_MVVM.MVVMs;
 
 namespace WPF_MVVM
 {
@@ -14,13 +15,19 @@ namespace WPF_MVVM
     /// </summary>
     public partial class App : Application
     {
-        private VehiclesModel vehiclesModel;
+        public WindowService WindowService
+        {
+            get;
+        } = new WindowService();
+        private VehiclesModel VehiclesModel {
+            get;
+        } = new VehiclesModel();
 
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            vehiclesModel = new VehiclesModel();
-
+            ViewModels.VehiclesViewModel vehiclesViewModel = new ViewModels.VehiclesViewModel(VehiclesModel);
+            WindowService.Show(vehiclesViewModel);
         }
     }
 }

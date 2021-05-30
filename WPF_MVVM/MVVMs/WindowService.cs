@@ -7,7 +7,7 @@ using System.Windows;
 
 namespace WPF_MVVM.MVVMs
 {
-    class WindowService : IWindowService
+    public class WindowService : IWindowService
     {
         public void Show(IViewModel viewModel)
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WPF_MVVM.MVVMs
 {
-    interface IViewModel
+    public interface IViewModel
     {
         Action Close
         {

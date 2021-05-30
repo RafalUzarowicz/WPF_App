@@ -6,11 +6,9 @@ C:\Users\Szafer\RiderProjects\WPF_MVVM\WPF_MVVM\bin\Debug\net5.0-windows\WPF_MVV
 C:\Users\Szafer\RiderProjects\WPF_MVVM\WPF_MVVM\bin\Debug\net5.0-windows\ref\WPF_MVVM.dll
 C:\Users\Szafer\RiderProjects\WPF_MVVM\WPF_MVVM\bin\Debug\net5.0-windows\WPF_MVVM.pdb
 C:\Users\Szafer\RiderProjects\WPF_MVVM\WPF_MVVM\obj\Debug\net5.0-windows\WPF_MVVM.csprojAssemblyReference.cache
-C:\Users\Szafer\RiderProjects\WPF_MVVM\WPF_MVVM\obj\Debug\net5.0-windows\MainWindow.g.cs
 C:\Users\Szafer\RiderProjects\WPF_MVVM\WPF_MVVM\obj\Debug\net5.0-windows\App.g.cs
 C:\Users\Szafer\RiderProjects\WPF_MVVM\WPF_MVVM\obj\Debug\net5.0-windows\WPF_MVVM_MarkupCompile.cache
 C:\Users\Szafer\RiderProjects\WPF_MVVM\WPF_MVVM\obj\Debug\net5.0-windows\WPF_MVVM_MarkupCompile.lref
-C:\Users\Szafer\RiderProjects\WPF_MVVM\WPF_MVVM\obj\Debug\net5.0-windows\MainWindow.baml
 C:\Users\Szafer\RiderProjects\WPF_MVVM\WPF_MVVM\obj\Debug\net5.0-windows\WPF_MVVM.g.resources
 C:\Users\Szafer\RiderProjects\WPF_MVVM\WPF_MVVM\obj\Debug\net5.0-windows\WPF_MVVM.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Szafer\RiderProjects\WPF_MVVM\WPF_MVVM\obj\Debug\net5.0-windows\WPF_MVVM.AssemblyInfoInputs.cache
@@ -23,3 +21,8 @@ C:\Users\Szafer\RiderProjects\WPF_MVVM\WPF_MVVM\obj\Debug\net5.0-windows\WPF_MVV
 C:\Users\Szafer\RiderProjects\WPF_MVVM\WPF_MVVM\obj\Debug\net5.0-windows\UserControls\VehicleTypePicker.g.cs
 C:\Users\Szafer\RiderProjects\WPF_MVVM\WPF_MVVM\obj\Debug\net5.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\Szafer\RiderProjects\WPF_MVVM\WPF_MVVM\obj\Debug\net5.0-windows\UserControls\VehicleTypePicker.baml
+C:\Users\Szafer\RiderProjects\WPF_MVVM\WPF_MVVM\obj\Debug\net5.0-windows\Views\VehiclesView.g.cs
+C:\Users\Szafer\RiderProjects\WPF_MVVM\WPF_MVVM\obj\Debug\net5.0-windows\Views\VehicleView.g.cs
+C:\Users\Szafer\RiderProjects\WPF_MVVM\WPF_MVVM\obj\Debug\net5.0-windows\App.baml
+C:\Users\Szafer\RiderProjects\WPF_MVVM\WPF_MVVM\obj\Debug\net5.0-windows\Views\VehiclesView.baml
+C:\Users\Szafer\RiderProjects\WPF_MVVM\WPF_MVVM\obj\Debug\net5.0-windows\Views\VehicleView.baml

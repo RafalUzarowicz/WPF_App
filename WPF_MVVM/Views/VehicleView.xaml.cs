@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WPF_MVVM
+namespace WPF_MVVM.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for VehicleView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class VehicleView : UserControl
     {
-        public MainWindow()
+        public VehicleView()
         {
             InitializeComponent();
         }

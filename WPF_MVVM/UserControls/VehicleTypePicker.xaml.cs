@@ -21,36 +21,45 @@ namespace WPF_MVVM.UserControls
     /// </summary>
     public partial class VehicleTypePicker : UserControl
     {
+        public static readonly DependencyProperty VehicleTypeProperty =
+            DependencyProperty.Register("VehicleType", typeof(VehicleType), typeof(VehicleTypePicker),
+                new PropertyMetadata(VehicleType.Car, OnVehicleTypeChange));
+
         public VehicleTypePicker()
         {
             InitializeComponent();
             VehicleType = VehicleType.Car;
-            UpdateLayout();
+            UpdateControl();
         }
 
-        private VehicleType vehicleType;
         public VehicleType VehicleType
         {
             get
             {
-                return vehicleType;
+                return (VehicleType)GetValue(VehicleTypeProperty);
             }
             set
             {
-                vehicleType = value;
+                SetValue(VehicleTypeProperty, value);
             }
         }
 
-        private void UpdateLayout()
+        private static void OnVehicleTypeChange(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            VehicleTypeImage.Source = VehicleTypeExtension.GetVehicleTypeImageSource(VehicleType);
-            CurrentTypeLabel.Content = VehicleType.ToString();
+            if (d is VehicleTypePicker vehicleTypePicker)
+            {
+                vehicleTypePicker.UpdateControl();
+            }
+        }
+
+        private void UpdateControl()
+        {
+            VehicleTypeImg.Source = VehicleTypeExtension.GetVehicleTypeImageSource(VehicleType);
         }
 
         private void ChangeType_ButtonClick(object sender, RoutedEventArgs e)
         {
             PickNextVehicleType();
-            UpdateLayout();
         }
 
         private void PickNextVehicleType()
@@ -68,6 +77,7 @@ namespace WPF_MVVM.UserControls
                     VehicleType = VehicleType.Car;
                     break;
             }
+            UpdateControl();
         }
     }
 }

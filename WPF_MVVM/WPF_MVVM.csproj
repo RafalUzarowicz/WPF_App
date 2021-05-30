@@ -13,11 +13,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Views\" />
-      <Folder Include="ViewModels\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <Resource Include="UserControls\bike.png" />
       <Resource Include="UserControls\car.png" />
       <Resource Include="UserControls\truck.png" />
