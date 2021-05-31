@@ -7,7 +7,7 @@
              mc:Ignorable="d" Height="100" Width="100">
     <Viewbox Stretch="Uniform">
         <Grid Background="White">
-            <Button x:Name="ChangeTypeButton" Click="ChangeType_ButtonClick" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Button x:Name="ChangeTypeButton" Click="ChangeType_ButtonClick" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Cursor="Hand">
                 <Image x:Name="VehicleTypeImg" VerticalAlignment="Stretch" Source="/UserControls/car.png" HorizontalAlignment="Stretch"/>
             </Button>
         </Grid>

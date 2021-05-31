@@ -22,7 +22,7 @@ namespace WPF_MVVM.MVVMs
         {
             Window w = new Window();
             w.Content = viewModel;
-            w.Width = 250;
+            w.Width = 300;
             w.Height = 300;
             viewModel.Close = w.Close;
             w.ShowDialog();
