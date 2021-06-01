@@ -71,7 +71,7 @@ namespace WPF_MVVM.ViewModels
             {
                 Brand = "Audi";
                 MaxSpeed = 100;
-                ProductionDate = new DateTime();
+                ProductionDate = new DateTime(1998, 3, 15);
                 VehicleType = VehicleType.Car;
             }
         }

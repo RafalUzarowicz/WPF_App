@@ -4,22 +4,33 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPF_MVVM.Views" xmlns:local1="clr-namespace:WPF_MVVM.UserControls" xmlns:viewmodels="clr-namespace:WPF_MVVM.ViewModels" xmlns:models="clr-namespace:WPF_MVVM.Models" xmlns:validation="clr-namespace:WPF_MVVM.Validation" d:DataContext="{d:DesignInstance Type=viewmodels:VehicleViewModel}"
-             mc:Ignorable="d" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Height="260" Width="280">
+             mc:Ignorable="d" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MinHeight="260" MinWidth="280">
     <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-        <Label Content="Brand" Margin="10,10,0,0" HorizontalAlignment="Left" Width="41" Height="26" VerticalAlignment="Top"/>
-        <Label Content="Max speed" Margin="10,41,0,0" HorizontalAlignment="Left" Width="67" Height="26" VerticalAlignment="Top"/>
-        <Label Content="Production date" Margin="10,72,0,0" HorizontalAlignment="Left" Width="95" Height="26" VerticalAlignment="Top"/>
-        <Label Content="Type" Margin="10,140,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="36"/>
-        <TextBox Height="23" Margin="106,13,27,0" TextWrapping="Wrap" VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="36"></RowDefinition>
+            <RowDefinition Height="36"></RowDefinition>
+            <RowDefinition Height="36"></RowDefinition>
+            <RowDefinition Height="*" MinHeight="100"></RowDefinition>
+            <RowDefinition Height="36"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Content="Brand" Margin="6,0,0,0" Grid.Column="0" HorizontalAlignment="Left" Width="41" Height="26" VerticalAlignment="Center"/>
+        <Label Content="Max speed" Margin="6,0,0,0" Grid.Column="0" Grid.Row="1" Height="26" VerticalAlignment="Center" HorizontalAlignment="Left" Width="67"/>
+        <Label Content="Production date" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" Width="95" Height="26" VerticalAlignment="Center"/>
+        <Label Content="Type" Margin="10,0,0,0" Height="26" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Left" Width="36"/>
+        <TextBox Height="24" Margin="45,0,45,0" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="1">
             <TextBox.Text>
                 <Binding Path="Brand" UpdateSourceTrigger="PropertyChanged">
                     <Binding.ValidationRules>
                         <validation:BrandRule/>
                     </Binding.ValidationRules>
-                </Binding> 
+                </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBox Margin="106,44,27,0" TextWrapping="Wrap" Height="23" VerticalAlignment="Top">
+        <TextBox Margin="45,0,45,0" TextWrapping="Wrap" Height="24" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1">
             <TextBox.Text>
                 <Binding Path="MaxSpeed" UpdateSourceTrigger="PropertyChanged">
                     <Binding.ValidationRules>
@@ -28,9 +39,9 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <local1:VehicleTypePicker Margin="106,103,0,0" VehicleType="{Binding VehicleType, Mode=TwoWay, BindsDirectlyToSource=True}" Height="100" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100"/>
-        <Button Content="Ok" Command="{Binding Path=OkCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=DataContext}" Margin="0,0,92,13" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75"/>
-        <Button Content="Cancel" Command="{Binding Path=CancelCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=DataContext}" Margin="0,0,12,13" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75"/>
-        <DatePicker SelectedDate="{Binding ProductionDate, Mode=TwoWay}" Margin="106,74,27,0" VerticalAlignment="Top"/>
+        <local1:VehicleTypePicker Margin="45,6,47,10" VehicleType="{Binding VehicleType, Mode=TwoWay, BindsDirectlyToSource=True}" Grid.Column="1" Grid.Row="3"/>
+        <Button Content="Ok" Grid.Column="0" Grid.Row="4" Command="{Binding Path=OkCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=DataContext}" Margin="6,0,0,8" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="75"/>
+        <Button Content="Cancel" Grid.Column="1" Grid.Row="4" Command="{Binding Path=CancelCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=DataContext}" Margin="0,0,10,0" Height="20" VerticalAlignment="Center" HorizontalAlignment="Right" Width="75"/>
+        <DatePicker SelectedDate="{Binding ProductionDate, Mode=TwoWay}" Margin="45,0,45,0" VerticalAlignment="Center" Grid.Column="1" Height="24" Grid.Row="2"/>
     </Grid>
 </UserControl>
